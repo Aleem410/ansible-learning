@@ -67,4 +67,4 @@
   tasks:
     - name: print URL
       roles:
-        - sample
+      - sample
