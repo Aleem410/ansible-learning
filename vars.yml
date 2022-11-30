@@ -64,7 +64,5 @@
 
 - name: demo on vars from roles
   hosts: localhost
-  tasks:
-    - name: print URL
-      Roles:
-      - sample
+  roles:
+    - sample
