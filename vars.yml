@@ -51,7 +51,7 @@
   hosts: localhost
   tasks:
     - name: Execute uptime shell command
-      ansible.builtin.shell: uptime
+      ansible.builtin.shell: UPTIME
       register: out
 
     - name: set a fact
