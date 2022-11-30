@@ -42,6 +42,6 @@
 - name: demo on ansible facts
   hosts: localhost
   tasks:
-    - name: print hostname
+    - name: print Fact
       ansible.builtin.debug:
-        msg: {{ ansible_hostname }}
+        msg: Hostname = {{ ansible_hostname }}
