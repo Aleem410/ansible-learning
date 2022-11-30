@@ -66,5 +66,5 @@
   hosts: localhost
   tasks:
     - name: print URL
-      roles:
+      Roles:
       - sample
