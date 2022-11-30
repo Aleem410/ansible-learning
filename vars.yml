@@ -54,6 +54,11 @@
       ansible.builtin.shell: uptime
       register: out
 
+    - name: ansible set_fact
+      ansible.builtin.set_fact:
+        UPTIME: "{{ out.stdout }}"
+
     - name: print out
       ansible.builtin.debug:
-       msg: "{{ out.stdout }}"
+       msg: "{{ UPTIME }}"
+
