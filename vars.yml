@@ -11,3 +11,12 @@
   tasks:
     - name: print hello
       ansible.builtin.debug:
+
+- name: demo on vars
+  hosts: localhost
+  vars:
+    URL
+  tasks:
+    - name: print UBL
+      ansible.builtin.debug:
+        msg: URL {{ URL }}
