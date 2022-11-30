@@ -29,3 +29,12 @@
         URL: play.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
+- name: demo on vars file level
+  hosts: localhost
+  tasks:
+    - name: print URL
+      vars:
+        demo-vars
+      ansible.builtin.debug:
+        msg: {{ demo-vars }}
