@@ -30,11 +30,11 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
-- name: demo on vars file level
+- name: demo on vars from file on play level
   hosts: localhost
   tasks:
     - name: print URL
-      vars:
-        demo-vars
+      vars_file:
+        - demo-vars.yml
       ansible.builtin.include:
-        msg: {{ demo-vars }}
+        msg: {{ URL }}
