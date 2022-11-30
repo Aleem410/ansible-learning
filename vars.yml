@@ -46,3 +46,4 @@
     - name: print Fact
       ansible.builtin.debug:
         msg: interfaces = {{ ansible_interfaces }}
+             Hostname = {{ ansible_fqdn }}
