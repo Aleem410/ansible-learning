@@ -32,7 +32,7 @@
 
 - name: demo on vars from file on play level
   hosts: localhost
-  vars_file:
+  vars_files:
     - demo-vars.yml
   tasks:
     - name: print URL
