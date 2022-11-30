@@ -43,5 +43,6 @@
   hosts: localhost
   tasks:
     - name: print Fact
+      gathering_facts: false
       ansible.builtin.debug:
         msg: Hostname = {{ ansible_hostname }}
