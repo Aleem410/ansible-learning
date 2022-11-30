@@ -18,5 +18,5 @@
     URL
   tasks:
     - name: print UBL
-      ansible.builtin.debug:
+      ansible.builtin.include:
         msg: URL {{ URL }}
