@@ -37,4 +37,4 @@
       vars_file:
         - demo-vars.yml
       ansible.builtin.debug:
-        msg: {{ URL }}
+        msg: URL = {{ URL }}
