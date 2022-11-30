@@ -36,5 +36,5 @@
     - name: print URL
       vars_file:
         - demo-vars.yml
-      ansible.builtin.include:
+      ansible.builtin.debug:
         msg: {{ URL }}
