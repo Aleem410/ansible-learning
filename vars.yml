@@ -33,8 +33,8 @@
 - name: demo on vars from file on task level
   hosts: localhost
   tasks:
-   - name: print URL
-     ansible.builtin.debug:
-     vars_files:
-      - demo-vars.yml
-     msg: URL = {{ URL }}
+    - name: print URL
+      ansible.builtin.debug:
+      vars_files:
+        - demo-vars.yml
+        msg: URL = {{ URL }}
