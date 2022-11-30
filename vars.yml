@@ -62,3 +62,9 @@
       ansible.builtin.debug:
        msg: "{{ UPTIME }}"
 
+- name: demo on vars from roles
+  hosts: localhost
+  tasks:
+    - name: print URL
+      roles:
+        - sample

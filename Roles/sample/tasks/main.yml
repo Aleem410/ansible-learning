@@ -1,0 +1,3 @@
+- name: print URL
+  anisible.builtin.debug:
+    msg: URL = {{ URL }}
