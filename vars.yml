@@ -15,8 +15,8 @@
 - name: demo on vars
   hosts: localhost
   vars:
-    URL
+    URL: play.example.com
   tasks:
-    - name: print UBL
-      ansible.builtin.include:
-        msg: URL {{ URL }}
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
