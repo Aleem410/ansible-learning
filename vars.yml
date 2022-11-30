@@ -34,7 +34,7 @@
   hosts: localhost
   tasks:
    - name: print URL
-     files:
+     files_vars:
         - demo-vars.yml
-     ansible.builtin.include:
+     ansible.builtin.debug:
         msg: URL = {{ URL }}
