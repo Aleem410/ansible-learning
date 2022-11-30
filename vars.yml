@@ -33,8 +33,8 @@
 - name: demo on vars from file on play level
   hosts: localhost
   tasks:
-    - name: print URL
-      files:
+   - name: print URL
+     files:
         - demo-vars.yml
-      ansible.builtin.include:
+     ansible.builtin.include:
         msg: URL = {{ URL }}
