@@ -47,3 +47,13 @@
       ansible.builtin.debug:
         msg: interfaces = {{ ansible_interfaces }}
              Hostname = {{ ansible_fqdn }}
+- name: demo on runtime variable
+  hosts: localhost
+  tasks:
+    - name: Execute uptime shell command
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: set a fact
+      ansible.builtin.set_fact:
+        UPTIME: {{ out }}
