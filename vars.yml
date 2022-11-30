@@ -35,5 +35,6 @@
   tasks:
     - name: print URL
       ansible.builtin.debug:
+        msg: URL = "{{ URL }}"
         vars_files:
           - demo-vars.yml
