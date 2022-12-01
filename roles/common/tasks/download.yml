@@ -1,4 +1,5 @@
 - name: Add application user
+  when: APP-USER is defined
   ansible.builtin.user:
     name: " {{ APP_USER }}"
 
