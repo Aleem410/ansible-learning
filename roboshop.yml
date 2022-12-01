@@ -1,5 +1,5 @@
 - name: Run Roboshop content
   hosts: all
   become: yes
-  roles_1:
+  roles1:
     - "{{ ROLE_NAME }}"
