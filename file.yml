@@ -18,6 +18,6 @@
   hosts: localhost
   tasks:
     - name: print addition
-      anisible.builting.debug:
+      anisible.builtin.debug:
         msg: "hello addition"
 
