@@ -21,10 +21,3 @@
       ansible.builtin.debug:
         msg: "hello addition"
 
-- name: demo on cli
-  hosts: localhost
-  tasks:
-    - name: print cli
-      ansible.builtin.debug:
-        msg: "{{ CLI }}"
-
