@@ -8,7 +8,7 @@
         msg: URL = {{ URL }}
 
 - name: demo on roles
-  hosts: local host
+  hosts: localhost
   tasks:
   roles:
     - sample
