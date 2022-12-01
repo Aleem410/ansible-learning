@@ -1,5 +1,5 @@
 - name: Run Roboshop content
-  hosts: 172.31.12.113
+  hosts: localhost
   become: yes
-  roles:
+  roles_1:
     - "{{ ROLE_NAME }}"
