@@ -1,0 +1,4 @@
+- name: PRINT vars from file
+  hosts: localhost
+  vars_files:
+    - demo-vars
