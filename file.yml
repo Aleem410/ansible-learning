@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: PRINT URL
-      ansible.builtin.debug:
       vars_files:
-      - test.yml
-      msg: URL = {{ URL }}
+       - test.yml
+      ansible.builtin.debug:
+         msg: URL = {{ URL }}
