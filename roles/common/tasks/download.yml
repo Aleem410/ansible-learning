@@ -1,0 +1,9 @@
+- name: Add application user
+  ansible.builtin.user:
+    name: " {{ APP_USER }}"
+
+- name: Download APP content
+  ansible.builtin.get_url:
+    url: "https://github.com/roboshop-devops-project/{{ COMPONENT }}/archive/main.zip"
+    dest: tmp/{{ COMPONENT }}.zip
+
