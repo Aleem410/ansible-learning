@@ -36,8 +36,7 @@
     - name: print URL
       ansible.builtin.debug:
         msg: URL = {{ URL }}
-      vars_files:
-         test.yml
+
 - name: demo on ansible facts
   hosts: localhost
   gather_facts: false
