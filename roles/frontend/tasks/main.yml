@@ -3,6 +3,10 @@
     name: nginx
     state: installed
 
+- name: Include Download App content  from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download.yml
   #APP_LOC=/usr/share/nginx/html
   #
   #DOWNLOAD_APP_CODE
