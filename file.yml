@@ -14,4 +14,10 @@
     - sample
     - mongo
 
+- name: demo on integers
+  hosts: localhost
+  tasks:
+    - name: print addition
+      anisible.builting.debug:
+        msg: "hello addition"
 
