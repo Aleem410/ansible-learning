@@ -14,10 +14,10 @@
     - sample
     - mongo
 
-- name: demo on integers
+- name: demo on play
   hosts: localhost
   tasks:
-    - name: print addition
-      anisible.builtin.debug:
+    - name: print hello
+      ansible.builtin.debug:
         msg: "hello addition"
 
