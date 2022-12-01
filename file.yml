@@ -1,6 +1,6 @@
 - name: demo vars from file
   hosts: localhost
-  vars_file:
+  vars_files:
     test.yml
   tasks:
     - name: PRINT URL
