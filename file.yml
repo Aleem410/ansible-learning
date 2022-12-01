@@ -3,7 +3,7 @@
   tasks:
     - name: PRINT URL
       ansible.builtin.debug:
+        msg: URL = {{ URL }}
         vars_files:
           test.yml
-        msg: URL = {{ URL }}
 
