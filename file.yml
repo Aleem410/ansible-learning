@@ -21,3 +21,8 @@
       ansible.builtin.debug:
         msg: "hello addition"
 
+- name: demo on package
+  hosts: localhost
+  tasks:
+  roles:
+    - roles_1
