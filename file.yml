@@ -4,5 +4,5 @@
     - name: PRINT URL
       vars_files:
        - test.yml
-      ansible.builtin.debug:
+      ansible.builtin.include_vars:
          msg: URL = {{ URL }}
