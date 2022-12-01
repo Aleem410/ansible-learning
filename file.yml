@@ -1,7 +1,7 @@
 - name: PRINT vars from file
   hosts: localhost
   vars_files:
-    - demo-vars.yml
+    - demo_vars.yml
   tasks:
     ansible.builtin.debug:
       msg: URL = {{ URL }}
