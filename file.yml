@@ -1,7 +1,7 @@
 - name: demo vars from file
   hosts: localhost
   vars_files:
-    - demo_vars
+    - test
   tasks:
     - name: PRINT URL
       ansible.builtin.debug:
