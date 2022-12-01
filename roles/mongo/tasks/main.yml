@@ -1,4 +1,3 @@
 - name: PRINT URL
-  hosts: all
   ansible.builtin.debug:
-    msg: "{{ URL }}"
+    msg: URL = {{ URL }}
