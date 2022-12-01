@@ -1,8 +1,8 @@
 - name: demo vars from file
   hosts: localhost
+  vars_file:
+    test.yml
   tasks:
     - name: PRINT URL
-      vars_file:
-        test.yml
       ansible.builtin.debug:
         msg: URL = {{URL}}
