@@ -2,3 +2,6 @@
   hosts: localhost
   vars_files:
     - demo-vars
+  tasks:
+    ansible.builtin.debug:
+      msg: URL = {{ URL }}
