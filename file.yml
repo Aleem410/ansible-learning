@@ -7,4 +7,10 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
+- name: demo on roles
+  hosts: local host
+  tasks:
+  roles:
+    - sample
+
 
