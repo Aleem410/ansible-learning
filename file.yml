@@ -3,5 +3,6 @@
   vars_files:
     - demo_vars
   tasks:
-    ansible.builtin.debug:
-      msg: URL = {{ URL }}
+    - name: PRINT URL
+      ansible.builtin.debug:
+       msg: URL = {{ URL }}
