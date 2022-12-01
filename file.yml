@@ -1,4 +1,4 @@
-- name: PRINT vars from file
+- name: demo vars from file
   hosts: localhost
   vars_files:
     - demo_vars
