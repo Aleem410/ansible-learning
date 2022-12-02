@@ -1,4 +1,4 @@
-- name: Install   nginx
+- name: Install nginx
   ansible.builtin.yum:
     name: nginx
     state: installed
@@ -11,8 +11,8 @@
 - name: start nginx
   ansible.builtin.systemd:
     - name: restart nginx
-      state: start
-      enable: yes
+      state: restarted
+      enabled: yes
 
   #mv frontend-main/static/* . &>>{LOG}
   # mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>{LOG}
