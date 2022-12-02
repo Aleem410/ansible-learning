@@ -8,7 +8,7 @@
     name: common
     tasks_from: download.yml
 
-- name: Copy roboshop config
+- name: Copy roboshop configuration file
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
