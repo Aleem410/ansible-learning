@@ -10,7 +10,7 @@
 
 - name: Download APP content and extract it
   ansible.builtin.unarchive:
-    src: "https://github.com/Aleem410/frontend.git/{{ COMPONENT }}/archive/main.zip"
+    src: "https://github.com/Aleem410/{{ COMPONENT }}/archive/refs/heads/main.zip"
     dest: "/tmp"
     remote_src: yes
 
@@ -19,4 +19,6 @@
     src: /tmp/{{ COMPONENT }}-main/
     dest: "{{ APP_LOC }}/"
     remote_src: yes
+
+
 
