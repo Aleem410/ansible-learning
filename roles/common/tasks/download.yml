@@ -3,11 +3,6 @@
   ansible.builtin.user:
     name: " {{ APP_USER }}"
 
-- name: Download APP content
-  ansible.builtin.get_url:
-    url: "https://github.com/Aleem410/frontend.git/{{ COMPONENT }}/archive/main.zip"
-    dest: /tmp/{{ COMPONENT }}.zip
-
 - name: Remove previous version of App
   ansible.builtin.file:
     path: "{{ APP_LOC }}"
