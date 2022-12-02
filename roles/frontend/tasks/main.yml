@@ -3,6 +3,11 @@
     name: nginx
     state: installed
 
+- name: Include Download App content  from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download.yml
+
 
   #mv frontend-main/static/* . &>>{LOG}
   # mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>{LOG}
