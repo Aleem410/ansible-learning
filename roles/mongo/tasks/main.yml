@@ -5,4 +5,9 @@
     name: mongodb-org
     state: installed
 
+- name: start mongodb service
+  ansible.builtin.systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
 
