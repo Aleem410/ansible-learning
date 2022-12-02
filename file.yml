@@ -27,7 +27,21 @@
   roles:
     - roles_1
         
+- name: Download mongodb repo file
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo
 
+- name: start mongodb service
+  ansible.builtin.systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
 
+- name: Replace a localhost entry with our own
+  ansible.builtin.lineinfile:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    line: '0.0.0.0'
 
 
