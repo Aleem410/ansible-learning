@@ -1,7 +1,7 @@
 - name: Add application user
   when: APP_USER is defined
   ansible.builtin.user:
-    name: " {{ APP_USER }}"
+    name: "{{ APP_USER }}"
 
 - name: Remove previous version of App
   ansible.builtin.file:
