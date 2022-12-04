@@ -1,0 +1,12 @@
+- name: configure nodejs repo
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
+- name: install nodejs
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
+- name: Include Download App content  from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download.yml
