@@ -38,10 +38,10 @@
     state: restarted
     enabled: yes
 
-- name: Replace a localhost entry with our own
-  ansible.builtin.lineinfile:
+- name: replace listen update file
+  ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
-    line: '0.0.0.0'
+    replace: '0.0.0.0'
 
 
