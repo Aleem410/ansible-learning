@@ -28,7 +28,7 @@
   #  - roles_1
 
 
-- name: print parameter
+- name: print parameter from amazon
   hosts: localhost
   tasks:
     -name: print a parameter
