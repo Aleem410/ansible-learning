@@ -7,3 +7,14 @@
       loop:
         - orange
         - apple
+
+
+- name: demo on map loop
+  hosts: localhost
+  tasks:
+    - name: loop on maps
+      ansible.builtin.debug:
+        msg: " Fruit name - {{ item.name }} count - {{ item.count }}"
+      loop:
+        - { name:'orange' , count: '100' }
+        - { name:'apple' , count: '50' }
