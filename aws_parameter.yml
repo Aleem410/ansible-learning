@@ -1,0 +1,7 @@
+- name: create all roboshop parameters
+  hosts: localhost
+  tasks:
+    - name: Create valued
+      community.aws.ssm_paramater:
+       name: "param.dev.catalogue.MONGO"
+       value: "false"
