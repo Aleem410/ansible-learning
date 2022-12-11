@@ -26,6 +26,10 @@
   tasks:
   roles:
     - roles_1
+
+
+- name: print parameter
+  debug: msg="{{ lookup('aws_ssm', 'param.dev.catalogue.MONGO', region='us-east-1' ) }}"
         
 -
 
