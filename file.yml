@@ -1,37 +1,36 @@
-- name: demo vars from file
-  hosts: localhost
-  vars_files:
-    test.yml
-  tasks:
-    - name: PRINT URL
-      ansible.builtin.debug:
-        msg: URL = {{ URL }}
+#- name: demo vars from file
+ # hosts: localhost
+  #vars_files:
+   # test.yml
+  #tasks:
+ #   - name: PRINT URL
+  #    ansible.builtin.debug:
+   #     msg: URL = {{ URL }}
 
-- name: demo on roles
-  hosts: localhost
-  tasks:
-  roles:
-    - sample
-    - mongo
+#- name: demo on roles
+ # hosts: localhost
+  #tasks:
+  #roles:
+ #   - sample
+  #  - mongo
 
-- name: demo on play
-  hosts: localhost
-  tasks:
-    - name: print hello
-      ansible.builtin.debug:
-        msg: "hello addition"
+#- name: demo on play
+ # hosts: localhost
+  #tasks:
+    #- name: print hello
+  #    ansible.builtin.debug:
+  #      msg: "hello addition"
 
-- name: demo on package
-  hosts: localhost
-  tasks:
-  roles:
-    - roles_1
+#- name: demo on package
+ # hosts: localhost
+  #tasks:
+  #roles:
+  #  - roles_1
 
 
 - name: print parameter
   debug: msg="{{ lookup('aws_ssm', 'param.dev.catalogue.MONGO', region='us-east-1' ) }}"
-        
--
+
 
 
 
