@@ -29,7 +29,10 @@
 
 
 - name: print parameter
-  debug: msg="{{ lookup('aws_ssm', 'param.dev.catalogue.MONGO', region='us-east-1' ) }}"
+  hosts: localhost
+  tasks:
+    ansible.builtin.debug:
+      msg="{{ lookup('aws_ssm', 'param.dev.catalogue.MONGO', region='us-east-1' ) }}"
 
 
 
