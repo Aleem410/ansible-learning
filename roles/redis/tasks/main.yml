@@ -16,3 +16,9 @@
   loop:
     - "{name: /etc/redis.conf}"
     - "{name: /etc/redis/redis.conf}"
+
+- name: start redis
+  ansible.builtin.systemd:
+    name: redis
+    state: restarted
+    enabled: yes
