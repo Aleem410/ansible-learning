@@ -9,7 +9,9 @@
 
 - name: install epel release
   ansible.builtin.yum:
-    name: epel-release
+    name:
+    - epel-release
+    - config-manager
     state: installed
 
 - name: install redis server
