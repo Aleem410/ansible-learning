@@ -1,5 +1,5 @@
 - name: Install the redis repo file
-  ansible.builtin.dnf:
+  ansible.builtin.yum:
     name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
     state: present
     disable_gpg_check: true
