@@ -1,10 +1,10 @@
 - name: Install the redis rpm from a remote repo
   ansible.builtin.dnf:
-    name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y'
+    name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
     state: present
 
 - name: enable redis 6 module
-  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
+  ansible.builtin.shell: dnf module enable redis:remi-6.2
 
 - name: install redis server
   ansible.builtin.yum:
