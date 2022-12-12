@@ -1,16 +1,16 @@
-#- name: Install the redis repo file
- # ansible.builtin.yum:
-  #  name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
-   # state: present
-    #disable_gpg_check: true
+- name: Install the redis repo file
+  ansible.builtin.yum:
+    name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
+    state: present
+    disable_gpg_check: true
 
-#- name: enable redis 6 module
- # ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
+- name: enable redis 6 module
+  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
 
-#- name: install redis server
- # ansible.builtin.yum:
-  #  name: Redis
-   # state: installed
+- name: install redis server
+  ansible.builtin.yum:
+   name: Redis
+   state: installed
 
 
 - name: replace listen  file
