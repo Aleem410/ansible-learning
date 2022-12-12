@@ -9,7 +9,7 @@
 - name: install redis server
   ansible.builtin.yum:
     name: Redis
-    state: Installed
+    state: installed
 
 
 - name: replace listen  file
