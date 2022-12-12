@@ -1,7 +1,5 @@
 - name: install redis repo file
-  ansible.builtin.shell:
-    - dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
-    - dnf module enable redis:remi-6.2 -y
+  ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
 - name: install redis server
   ansible.builtin.yum:
