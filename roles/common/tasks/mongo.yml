@@ -1,6 +1,6 @@
 - name: Load schema
   community.mongodb.mongodb_shell:
-  login_host: "{{ lookup('aws_ssm', 'param.{{ENV}}.catalogue.MONGO ENDPOINT', region='us-east-1' ) }}"
-  file: "{{APP_LOC}}/schema/{{component}}.js"
-  idempotent: yes
+   login_host: "{{ lookup('aws_ssm', 'param.{{ENV}}.catalogue.MONGO ENDPOINT', region='us-east-1' ) }}"
+   file: "{{APP_LOC}}/schema/{{component}}.js"
+   idempotent: yes
 
