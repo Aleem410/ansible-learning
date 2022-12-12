@@ -1,1 +1,9 @@
 URL: test.example.com
+  
+  location /api/user/ {{ lookup('aws_ssm', 'param.{{ENV}}.frontend.USER_URL', region='us-east-1' ) }}; }
+  
+  location /api/cart/ { proxy_pass {{ lookup('aws_ssm', 'param.{{ENV}}.frontend.CART_URL', region='us-east-1' ) }}; }
+  
+  location /api/shipping/ { proxy_pass {{ lookup('aws_ssm', 'param.{{ENV}}.frontend.SHIPPING_URL', region='us-east-1' ) }}; }
+  
+  location /api/payment/ { proxy_pass {{ lookup('aws_ssm', 'param.{{ENV}}.frontend.PAYMENT_URL', region='us-east-1' ) }}; }
