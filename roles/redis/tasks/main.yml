@@ -7,7 +7,9 @@
   ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
 
 - name: install redis server
-  ansible.builtin.shell: labauto ; redis
+  ansible.builtin.yum:
+    name: Redis
+    state: Installed
 
 
 - name: replace listen  file
