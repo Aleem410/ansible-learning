@@ -1,0 +1,18 @@
+- name: install redis repo file
+  ansible.builtin.shell:
+    - dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+    - dnf module enable redis:remi-6.2 -y
+
+- name: install redis server
+  ansible.builtin.yum:
+    name: Redis
+    state: installed
+
+- name: replace listen  file
+  ansible.builtin.replace:
+    name: "{{item.name}}"
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+  loop:
+    - "{name: /etc/redis.conf}"
+    - "{name: /etc/redis/redis.conf}"

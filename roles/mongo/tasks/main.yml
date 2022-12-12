@@ -1,6 +1,6 @@
 - name: download mongo repo
   ansible.builtin.copy:
-    src: mongo.repo
+    src: redis.repo
     dest: /etc/yum.repos.d/mongodb.repo
 
 - name: install mongodb
@@ -23,6 +23,12 @@
 - name: start mongodb
   ansible.builtin.systemd:
     name: mongod
+    state: restarted
+    enabled: yes
+
+- name: start redis
+  ansible.builtin.systemd:
+    name: redis
     state: restarted
     enabled: yes
 
