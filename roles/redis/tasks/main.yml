@@ -9,7 +9,7 @@
 
 - name: install epel release
   ansible.builtin.yum:
-    name: epel-release yum-utils
+    name: epel-release
     state: installed
 
 - name: install redis server
