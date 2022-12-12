@@ -7,6 +7,11 @@
 - name: enable redis 6 module
   ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
 
+- name: install epel release
+  ansible.builtin.yum:
+    name: epel-release yum-utils
+    state: installed
+
 - name: install redis server
   ansible.builtin.yum:
     name: Redis
