@@ -8,17 +8,19 @@
   ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
 
 - name: install redis server
-  ansible.builtin.shell: labauto ; redis
+  ansible.builtin.yum:
+    name: Redis
+    state: installed
 
 
 - name: replace listen  file
   ansible.builtin.replace:
-    path: "{{item.name}}"
+    path: "{{ item }}"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
   loop:
-    - "{name: /etc/redis.conf}"
-    - "{name: /etc/redis/redis.conf}"
+    - /etc/redis.conf
+    - /etc/redis/redis.conf
 
 - name: start redis
   ansible.builtin.systemd:
