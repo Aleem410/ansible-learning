@@ -1,0 +1,17 @@
+- name: download mysql repo
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: module disable mysql
+  ansible.builtin.dnf:
+    name: module mysql
+    state: absent
+
+- name: install mysql server
+  ansible.builtin.yum:
+    name: mysql-server-community
+    state: installed
+
+
+

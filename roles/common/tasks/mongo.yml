@@ -1,7 +1,7 @@
 - name: copy mongo repo file
   ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
 
 - name: install mongodb client
   ansible.builtin.yum:
