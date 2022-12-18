@@ -15,3 +15,4 @@
          - {name: "param.dev.user.MONGO_URL", value: "mongodb://172.31.13.28:27017/users"}
          - {name: "param.dev.user.REDIS_HOST", value: "172.31.0.127"}
          - {name: "param.dev.frontend.CATALOGUE_URL", value: "http://172.31.2.168:8080/"}
+         - {name: "param.dev.frontend.USER_URL", value: "http://172.31.7.57:8080/"}
