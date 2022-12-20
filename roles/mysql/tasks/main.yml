@@ -24,7 +24,7 @@
 - name: Get MySQL version
   community.mysql.mysql_info:
     login_user: root
-    login_password: {{ ROOT_PASSWORD }}
+    login_password: {{ROOT_PASSWORD}}
     filter: version
 
 
