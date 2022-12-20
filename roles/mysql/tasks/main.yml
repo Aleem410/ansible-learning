@@ -1,4 +1,8 @@
-- name: download mysql repo
+- name: setting root password
+  ansible.builtin.set_fact:
+    ROOT_PASSWORD: "{{ lookup('aws_ssm', 'param.{{ENV}}.mysql.ROOT_PASSWORD', region='us-east-1' ) }}"
+
+- name: copy mysql repo
   ansible.builtin.copy:
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo

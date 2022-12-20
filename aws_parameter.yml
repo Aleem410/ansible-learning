@@ -20,3 +20,4 @@
          - {name: "param.dev.cart.REDIS_HOST ", value: "172.31.0.127"}
          - {name: "param.dev.cart.CATALOGUE_HOST ", value: "172.31.2.168"}
          - {name: "param.dev.cart.CATALOGUE_PORT", value: "8080"}
+         - {name: "param.dev.mysql.ROOT_PASSWORD", value: "RoboShop@1"}
