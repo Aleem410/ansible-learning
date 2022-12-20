@@ -29,11 +29,12 @@
     login_password: "{{ROOT_PASSWORD}}"
     filter: version
   ignore_errors: yes
-  register: out
+  register: OUT
+
 
 - name: debug
   debug:
-    msg: {{OUT}}
+    msg: "{{OUT}}"
 
 
 
