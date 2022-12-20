@@ -15,5 +15,10 @@
     name: mysql-community-server
     state: installed
 
+- name: start mysql
+  ansible.builtin.systemd:
+    name: mysqld
+    enabled: yes
+    state: restarted
 
 
