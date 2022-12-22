@@ -34,15 +34,15 @@
 
 - name: default password change
   when: out.failed
-  ansible.builtin.block:
+  block:
     - name: copy root reset password file
       ansible.builtin.template:
-      src: root-pass.sql
-      dest: /tmp/root-pass.sql
+       src: root-pass.sql
+       dest: /tmp/root-pass.sql
 
     - name: Load mysql log file
       ansible.builtin.slurp:
-      src: /var/log/mysqld.log
+       src: /var/log/mysqld.log
       register: mysql.log
 
     - name: chamge default password
