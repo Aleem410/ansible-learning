@@ -43,7 +43,7 @@
 
 - name: print
   debug:
-    msg: "{{out['content'] | b64encode}}"
+    msg: "{{out['content'] | b64encode | regex_findall('temporary password.*')}}"
 
 
 
