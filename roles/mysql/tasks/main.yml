@@ -58,7 +58,7 @@
 
 - name: print
   debug:
-    msg: {{ out }}
+    msg: "{{ out }}"
 
 
 
