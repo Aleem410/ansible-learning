@@ -28,13 +28,25 @@
     login_user: root
     login_password: "{{ROOT_PASSWORD}}"
     filter: version
-  ignore_errors: yes
+    ignore_errors: yes
+    register: out
+
+- name: reset password
+  ansible.builtin.template:
+    src: root-pass.sql
+    dest: /tmp/root-pass.sql
+
+- name: Load mysql log file
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.lod
   register: out
 
-
-- name: debug
+- name: print
   debug:
     msg: "{{out}}"
+
+
+
 
 
 
