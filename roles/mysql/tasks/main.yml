@@ -48,6 +48,17 @@
     - name: chamge default password
       ansible.builtin.shell: cat /tmp/root-pass-sql | mysql --connect-expired-password -uroot -p"{{ log['content'] | b64decode | regex_findall('temporary password.*') | join(' ') | split(' ') | last }}"
 
+- name: show plugins
+  community.mysql.mysql_query:
+    login_user: root
+    login_password: "{{ROOT_PASSWORD}}"
+    query: show plugins
+  ignore_errors: yes
+  register: out
+
+- name: print
+  debug:
+    msg: {{ out }}
 
 
 
