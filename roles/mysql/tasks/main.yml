@@ -31,19 +31,23 @@
   ignore_errors: yes
   register: out
 
-- name: reset password
-  ansible.builtin.template:
-    src: root-pass.sql
-    dest: /tmp/root-pass.sql
 
-- name: Load mysql log file
-  ansible.builtin.slurp:
-    src: /var/log/mysqld.log
-  register: out
+- name: default password change
+  when: out.failed
+  ansible.builtin.block:
+    - name: copy root reset password file
+      ansible.builtin.template:
+      src: root-pass.sql
+      dest: /tmp/root-pass.sql
 
-- name: print
-  debug:
-    msg: "{{ out['content'] | b64decode | regex_findall('temporary password.*') | join(' ') | split(' ') | last }}"
+    - name: Load mysql log file
+      ansible.builtin.slurp:
+      src: /var/log/mysqld.log
+      register: mysql.log
+
+    - name: chamge default password
+      ansible.builtin.shell: cat /tmp/root-pass-sql | mysql --connect-expired-password -uroot -p"{{ mysql.log['content'] | b64decode | regex_findall('temporary password.*') | join(' ') | split(' ') | last }}"
+
 
 
 
