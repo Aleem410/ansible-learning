@@ -38,7 +38,7 @@
 
 - name: Load mysql log file
   ansible.builtin.slurp:
-    src: /var/log/mysqld.lod
+    src: /var/log/mysqld.log
   register: out
 
 - name: print
