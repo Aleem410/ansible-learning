@@ -30,20 +30,20 @@
     filter: version
   ignore_errors: yes
   register: out
-#
-#- name: reset password
-#  ansible.builtin.template:
-#    src: root-pass.sql
-#    dest: /tmp/root-pass.sql
-#
-#- name: Load mysql log file
-#  ansible.builtin.slurp:
-#    src: /var/log/mysqld.lod
-#  register: out
-#
-#- name: print
-#  debug:
-#    msg: "{{out}}"
+
+- name: reset password
+  ansible.builtin.template:
+    src: root-pass.sql
+    dest: /tmp/root-pass.sql
+
+- name: Load mysql log file
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.lod
+  register: out
+
+- name: print
+  debug:
+    msg: "{{out}}"
 
 
 
