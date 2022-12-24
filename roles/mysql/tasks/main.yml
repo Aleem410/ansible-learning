@@ -46,7 +46,7 @@
       register: log
 
     - name: change default password
-      ansible.builtin.shell: cat /tmp/root-pass-sql | mysql --connect-expired-password -uroot -p"{{ log['content'] | b64decode | regex_findall('temporary password.*') | join(' ') | split(' ') | last }} " <tmp/root-pass.sql
+      ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{ log['content'] | b64decode | regex_findall('temporary password.*') | join(' ') | split(' ') | last }} " <tmp/root-pass.sql
 
 - name: get plugins list
   community.mysql.mysql_query:
@@ -63,6 +63,13 @@
     query: uninstall plugin validate_password
   when: out | regex_findall('validate_password.*') | length > 0
 
+#- name: copy App User setup SQL
+#  ansible.builtin.template:
+#    src: /tmp/app-user.sql
+#    dest: /tmp/app-user.sql
+#
+#- name: create App user in DB
+#  ansible.builtin.shell: mysql -uroot -p"{{ ROOT_PASSWORD }}"  </tmp/app-user.sql
 
 
 
