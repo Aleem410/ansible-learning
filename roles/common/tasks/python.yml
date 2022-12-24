@@ -20,7 +20,7 @@
   ansible.builtin.replace:
     path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: 'uid'
-    line: uid = {{appuser}}
+    line: uid = {{USERID}}
 
 
 - name: Include systemd setup
