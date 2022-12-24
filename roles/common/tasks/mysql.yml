@@ -2,7 +2,7 @@
   ansible.builtin.yum:
     name:
     - mariadb
-    - - python3-PyMySQL
+    - python3-PyMySQL
     state: installed
 
 - name: Load Schema
