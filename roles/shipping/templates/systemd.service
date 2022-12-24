@@ -1,12 +1,11 @@
 [Unit]
-Description=user service
+Description=shipping service
 
 [Service]
 User=roboshop
-Environment=MONGO="{{ lookup('aws_ssm', 'param.{{ENV}}.user.MONGO', region='us-east-1' ) }}"
-Environment=MONGO_URL="{{ lookup('aws_ssm', 'param.{{ENV}}.user.MONGO_URL', region='us-east-1' ) }}"
-Environment=REDIS_HOST="{{ lookup('aws_ssm', 'param.{{ENV}}.user.REDIS_HOST', region='us-east-1' ) }}"
-ExecStart=/usr/bin/node /home/roboshop/user/server.js
+Environment=DB_HOST="{{ lookup('aws_ssm', 'param.{{ENV}}.shipping.DB_HOST', region='us-east-1' ) }}"
+Environment=CART_ENDPOINT="{{ lookup('aws_ssm', 'param.{{ENV}}.shipping.CART_ENDPOINT', region='us-east-1' ) }}"
+ExecStart=/usr/bin/node /home/roboshop/shipping/server.js
 
 
 [Install]
