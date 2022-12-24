@@ -1,0 +1,29 @@
+- name: install python
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: Include Download App content  from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download.yml
+
+- name: Install PIP dependencies
+  ansible.builtin.pip:
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
+    executable: pip3
+
+- name: update application parameter file
+  ansible.builtin.replace:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    regexp: 'uid'
+    line: uid = {{appuser}}
+
+
+- name: Include systemd setup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd.yml
