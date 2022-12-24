@@ -1,6 +1,6 @@
 - name: install maven
   ansible.builtin.yum:
-    name: Maven
+    name: maven
     state: installed
 
 - name: Include Download App content  from common
