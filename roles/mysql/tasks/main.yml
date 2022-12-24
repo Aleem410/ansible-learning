@@ -15,7 +15,7 @@
     name:
     - mysql-community-server
     - python3-PyMySQL
-    state: installed
+  state: installed
 
 - name: start mysql
   ansible.builtin.systemd:
