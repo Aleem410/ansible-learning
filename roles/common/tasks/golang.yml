@@ -15,7 +15,7 @@
 
 - name: start dispatch service
   ansible.builtin.systemd:
-    name: dispatch
+    name: dispatch.service
+    daemon-reload: yes
     state: restarted
     enabled: yes
-    daemon-reload: yes
