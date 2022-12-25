@@ -67,3 +67,7 @@
 - name: demo on register
   ansible.builtin.shell: ls
   register: out
+
+- name: debug
+  debug:
+    msg: "{{out}}"
