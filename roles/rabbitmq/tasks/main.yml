@@ -1,25 +1,28 @@
-- name: install maven
+- name: install repo files
+  ansible.builtin.shell: curl -s {{item}} | bash
+  loop:
+     - https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh
+     - https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh
+
+- name: Install erlang
   ansible.builtin.yum:
-    name: maven
+    name:
+      - erlang
+      - rabbitmq-server
     state: installed
 
-- name: Include Download App content  from common
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: download.yml
+- name: Start rabbitmq server
+  ansible.builtin.systemd:
+    name: rabbitmq
+    state: restarted
+    enbaled: yes
 
-- name: compile code
-  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
-  args:
-    chdir: "{{ APP_LOC }}"
-
-- name: LOAD schema
-  when: LOAD_SCHEMA
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: "{{ DB_TYPE }}"
-
-- name: Include systemd setup
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: systemd.yml
+- name: Add Application user
+  community.rabbitmq.rabbitmq_user:
+    user: "{{ lookup('aws_ssm', 'param.{{ENV}}.payment.AMQP_USER', region='us-east-1' ) }}"
+    password: "{{ lookup('aws_ssm', 'param.{{ENV}}.payment.AMQP_PASS', region='us-east-1' ) }}"
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
