@@ -26,6 +26,6 @@
          - {name: "param.dev.shipping.ROOT_PASSWORD", value: "RoboShop@1"}
          - {name: "param.dev.payment.CART_HOST", value: "172.31.11.175"}
          - {name: "param.dev.payment.USER_HOST", value: "172.31.7.57"}
-         - {name: "param.dev.payment.AMQP_HOST", value: "RoboShop@1"}
+         - {name: "param.dev.payment.AMQP_HOST", value: "172.31.1.34"}
          - {name: "param.dev.payment.AMQP_USER", value: "roboshop"}
          - {name: "param.dev.payment.AMQP_PASS", value: "roboshop123"}
