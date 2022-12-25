@@ -17,6 +17,8 @@
          - {name: "param.dev.frontend.CATALOGUE_URL", value: "http://172.31.2.168:8080/"}
          - {name: "param.dev.frontend.CART_URL", value: "http://172.31.11.175:8080/"}
          - {name: "param.dev.frontend.USER_URL", value: "http://172.31.7.57:8080/"}
+         - {name: "param.dev.frontend.SHIPPING_URL", value: "http://172.31.1.243:8080/"}
+         - {name: "param.dev.frontend.PAYMENT_URL", value: "http://172.31.8.196:8080/"}
          - {name: "param.dev.cart.REDIS_HOST ", value: "172.31.0.127"}
          - {name: "param.dev.cart.CATALOGUE_HOST ", value: "172.31.2.168"}
          - {name: "param.dev.cart.CATALOGUE_PORT", value: "8080"}
