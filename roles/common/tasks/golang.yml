@@ -9,10 +9,7 @@
     tasks_from: download.yml
 
 - name: install dependencies
-  ansible.builtin.shell:
-    - go mod init dispatch
-    - go get
-    - go build
+  ansible.builtin.shell: go mod init dispatch && go get && go build
   args:
     chdir: "{{ APP_LOC }}"
 
