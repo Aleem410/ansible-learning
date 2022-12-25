@@ -1,5 +1,8 @@
 [Service]
 User=root
+WorkingDirectory=/home/roboshop/payment
+
+
 Environment=CART_HOST="{{ lookup('aws_ssm', 'param.{{ENV}}.payment.CART_HOST', region='us-east-1' ) }}"
 Environment=USER_HOST="{{ lookup('aws_ssm', 'param.{{ENV}}.payment.USER_HOST', region='us-east-1' ) }}"
 Environment=AMQP_HOST="{{ lookup('aws_ssm', 'param.{{ENV}}.payment.AMQP_HOST', region='us-east-1' ) }}"
