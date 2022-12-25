@@ -15,7 +15,7 @@
   ansible.builtin.systemd:
     name: rabbitmq
     state: restarted
-    enbaled: yes
+    enabled: yes
 
 - name: Add Application user
   community.rabbitmq.rabbitmq_user:
