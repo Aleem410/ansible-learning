@@ -4,7 +4,7 @@
      - https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh
      - https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh
 
-- name: Install erlang
+- name: Install erlang & Rabbitmq-server
   ansible.builtin.yum:
     name:
       - erlang
