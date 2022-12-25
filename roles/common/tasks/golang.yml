@@ -13,9 +13,7 @@
   args:
     chdir: "{{ APP_LOC }}"
 
-- name: start dispatch service
-  ansible.builtin.systemd:
-    name: dispatch.service
-    daemon-reload: yes
-    state: restarted
-    enabled: yes
+- name: Include systemd setup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd.yml
