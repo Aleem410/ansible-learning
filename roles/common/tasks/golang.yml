@@ -1,0 +1,24 @@
+- name: Install golang
+  ansible.builtin.yum:
+    name: golang
+    state: installed
+
+- name: Include Download App content  from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download.yml
+
+- name: install dependencies
+  ansible.builtin.shell:
+    - go mod init dispatch
+    - go get
+    - go build
+  args:
+    chdir: "{{ APP_LOC }}"
+
+- name: start dispatch service
+  ansible.builtin.systemd:
+    name: dispatch
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
