@@ -1,66 +1,69 @@
-- name: just a demo play
-  hosts: localhost
-  tasks:
-    - name: print hello
-      ansible.builtin.debug:
-        msg: welcome to ansible
-
-
-- name: demo on vars
-  hosts: localhost
-  tasks:
-    - name: print hello
-      ansible.builtin.debug:
-
-- name: demo on vars play level
-  hosts: localhost
-  vars:
-    URL: play.example.com
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL = {{ URL }}
-
-- name: demo on vars task level
-  hosts: localhost
-  tasks:
-    - name: print URL
-      vars:
-        URL: play.example.com
-      ansible.builtin.debug:
-        msg: URL = {{ URL }}
-
-- name: demo on vars from file on task level
-  hosts: localhost
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL = {{ URL }}
-
-- name: demo on ansible facts
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: print Fact
-      ansible.builtin.debug:
-        msg: interfaces = {{ ansible_interfaces }}
-             Hostname = {{ ansible_fqdn }}
-- name: demo on runtime variable
-  hosts: localhost
-  tasks:
-    - name: Execute uptime shell command
-      ansible.builtin.shell: uptime
-      register: out
-
-    - name: ansible set_fact
-      ansible.builtin.set_fact:
-        UPTIME: "{{ out.stdout }}"
-
-    - name: print out
-      ansible.builtin.debug:
-       msg: "{{ UPTIME }}"
-
-- name: demo on vars from roles
-  hosts: localhost
-  roles:
-   - sample
+#- name: just a demo play
+#  hosts: localhost
+#  tasks:
+#    - name: print hello
+#      ansible.builtin.debug:
+#        msg: welcome to ansible
+#
+#
+#- name: demo on vars
+#  hosts: localhost
+#  tasks:
+#    - name: print hello
+#      ansible.builtin.debug:
+#
+#- name: demo on vars play level
+#  hosts: localhost
+#  vars:
+#    URL: play.example.com
+#  tasks:
+#    - name: print URL
+#      ansible.builtin.debug:
+#        msg: URL = {{ URL }}
+#
+#- name: demo on vars task level
+#  hosts: localhost
+#  tasks:
+#    - name: print URL
+#      vars:
+#        URL: play.example.com
+#      ansible.builtin.debug:
+#        msg: URL = {{ URL }}
+#
+#- name: demo on vars from file on task level
+#  hosts: localhost
+#  tasks:
+#    - name: print URL
+#      ansible.builtin.debug:
+#        msg: URL = {{ URL }}
+#
+#- name: demo on ansible facts
+#  hosts: localhost
+#  gather_facts: false
+#  tasks:
+#    - name: print Fact
+#      ansible.builtin.debug:
+#        msg: interfaces = {{ ansible_interfaces }}
+#             Hostname = {{ ansible_fqdn }}
+#- name: demo on runtime variable
+#  hosts: localhost
+#  tasks:
+#    - name: Execute uptime shell command
+#      ansible.builtin.shell: uptime
+#      register: out
+#
+#    - name: ansible set_fact
+#      ansible.builtin.set_fact:
+#        UPTIME: "{{ out.stdout }}"
+#
+#    - name: print out
+#      ansible.builtin.debug:
+#       msg: "{{ UPTIME }}"
+#
+#- name: demo on vars from roles
+#  hosts: localhost
+#  roles:
+#   - sample
+- name: demo on register
+  ansible.builtin.shell: ls
+  register: out
