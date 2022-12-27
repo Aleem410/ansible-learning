@@ -65,7 +65,7 @@
 #  roles:
 #   - sample
 - name: demo on register
-  ansible.builtin.shell: ls
+  ansible.builtin.shell:
   register: out
 
 - name: debug
