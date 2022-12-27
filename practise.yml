@@ -1,7 +1,7 @@
 - name: test
   hosts: localhost
-  ansible.builtin.debug:
   tasks:
     vars:
-     URL = welcome to ansible
-    msg: "{{ URL }}"
+      URL = welcome to ansible
+  ansible.builtin.debug:
+       msg: "{{ URL }}"
