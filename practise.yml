@@ -6,4 +6,4 @@
         - URL: welcome to ansible
         - abc: come to the world
       ansible.builtin.debug:
-        msg: URL = "{{ URL }}\n string = {{ abc}}"
+        msg: URL = "{{ URL }}\nstring = {{ abc}}"
