@@ -2,8 +2,8 @@
   hosts: localhost
   tasks:
     - name: print URL
-      vars: |
-        - URL: welcome to ansible
-        - abc: come to the world
+      vars:
+        - URL: welcome to ansible\n
+        - abc: come to the world\n
       ansible.builtin.debug:
         msg: URL = "{{ URL }}, string = {{ abc }}"
