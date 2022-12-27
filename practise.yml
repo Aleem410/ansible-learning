@@ -4,6 +4,6 @@
     - name: print URL
       vars:
         - URL: welcome to ansible
-        - URL: come to the world
+        - abc: come to the world
       ansible.builtin.debug:
-        msg: "{{ URL }}"
+        msg: URL = "{{ URL }}, string = {{ abc}}"
