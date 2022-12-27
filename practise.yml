@@ -3,6 +3,5 @@
   tasks:
   vars:
      URL = welcome to ansible
-     - name: print message
   ansible.builtin.debug:
-       msg: "{{ URL }}"
+     msg: "{{ URL }}"
