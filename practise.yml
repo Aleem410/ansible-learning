@@ -3,7 +3,7 @@
   tasks:
     - name: print URL
       vars:
-        - URL: welcome to ansible
+        - URL: welcome to ansible\n
         - abc: come to the world
       ansible.builtin.debug:
-        msg: URL = "{{ URL }},\n string = {{ abc }}"
+        msg: URL = "{{ URL }}, string = {{ abc }}"
