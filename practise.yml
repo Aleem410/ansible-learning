@@ -1,4 +1,5 @@
 - name: test
   hosts: localhost
   tasks:
-    msg: hello world
+    debug:
+      msg: hello world
